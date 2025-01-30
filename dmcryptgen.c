@@ -294,6 +294,7 @@ int main(int argc, char *argv[])
 out:
 	fsync(fd);
 	close(fd);
+	OPENSSL_cleanse(key, sizeof(key));
 
 	return ret;
 }
